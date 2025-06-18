@@ -24,3 +24,13 @@ class Calculator:
         if b == 0:
             raise ValueError("Cannot divide by zero")
         return a / b
+    
+    def square_root(self, a):
+        """Return the square root of a.
+        
+        Raises:
+            ValueError: If a is negative.
+        """
+        if a < 0:
+            raise ValueError("Cannot compute square root of negative number")
+        return a ** 0.5
