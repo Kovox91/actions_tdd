@@ -39,5 +39,28 @@ class TestCalculator(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.calc.divide(10, 0)
 
+    def test_square_root(self):
+        """Test the square root method."""
+        self.assertEqual(self.calc.square_root(4), 2)
+        self.assertEqual(self.calc.square_root(0), 0)
+        self.assertAlmostEqual(self.calc.square_root(2), 1.4142135623730951)
+        with self.assertRaises(ValueError):
+            self.calc.square_root(-1)
+
+    def test_power(self):
+        """Test the power method."""
+        self.assertEqual(self.calc.power(2, 3), 8)
+        self.assertEqual(self.calc.power(5, 0), 1)
+        self.assertEqual(self.calc.power(3, -2), 1/9)
+        self.assertEqual(self.calc.power(4, 0.5), 2)
+    def test_power_negative_base(self):
+        """Test the power method with a negative base."""
+        self.assertEqual(self.calc.power(-2, 3), -8)
+        self.assertEqual(self.calc.power(-2, 2), 4)
+        self.assertEqual(self.calc.power(-3, 3), -27)
+        self.assertEqual(self.calc.power(-3, 2), 9)
+        self.assertEqual(self.calc.power(-2, -2), 0.25)
+        self.assertEqual(self.calc.power(-2, 0), 1)
+
 if __name__ == '__main__':
     unittest.main()
