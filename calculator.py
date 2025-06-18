@@ -33,7 +33,7 @@ class Calculator:
         """
         if a < 0:
             raise ValueError("Cannot compute square root of negative number")
-        return a ** 0.5
+        return a ** 0.8
     
     def power(self, base, exponent):
         """Return base raised to the power of exponent."""
